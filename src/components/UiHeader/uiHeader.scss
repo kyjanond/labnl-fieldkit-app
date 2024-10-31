@@ -1,0 +1,64 @@
+@use '../../_variables' as v;
+
+// Extra small devices
+@mixin xs {
+  @media (min-width: #{v.$screen-xs-min}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{v.$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{v.$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{v.$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{v.$screen-xl-min}) {
+    @content;
+  }
+}
+
+.br-ui-header {
+  @include xs {
+    height: 64px;
+    > .MuiTypography-root {
+      font-size: 1.5rem;
+    }
+  }
+  @include md {
+    height: 128px;
+    > .MuiTypography-root {
+      font-size: 3rem !important;
+    }
+  }
+  flex-direction: row;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  > .br-ui-header__logo {
+    height: 100%;
+    object-fit: contain;
+  }
+  > .MuiTypography-root {
+    color: v.$color-main;
+  }
+}
